@@ -48,7 +48,10 @@ $('#addProject').submit(function(e){
 	                      addclass: "stack-modal"
 	                  })
 	               // alert(results.msg)
-	                setTimeout(function(){document.location.pathname= '/'},1500)
+	                //setTimeout(function(){document.location.pathname= '/'},1500)
+	                //setTimeout(function(){location.reload()},1500)
+	                $('.close').click();
+	                showProjecs()
 	            }else{
 	                new PNotify({
 	                      title: 'Error',
@@ -77,7 +80,8 @@ function delProject(id){
 		          styling: 'bootstrap3',
 		          addclass: "stack-modal"
 		      })
-		      setTimeout(function(){window.location.pathname='/'}, 1500);
+		      //setTimeout(function(){location.reload()},1500)
+	                showProjecs()
 			}else{
 		         new PNotify({
 		          title: 'Error',

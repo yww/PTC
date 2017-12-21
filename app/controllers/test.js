@@ -147,13 +147,13 @@ exports.uploadCase= function(req,res,next){
 			var newName = timestamp+'.'+'jmx';
 			var newPath = path.join(__dirname,'../../','/public/cases/'+newName);
 			fs.writeFile(newPath,data,function(err){
-				console.log(err)
+				if(err) console.log(err)
 				res.send({
 					caseName: newName,
 					size: size,
 					originalFilename: originalFilename
 				})
-				next()
+				//next()
 			})
 		})
 	}else{next()}

@@ -10,12 +10,10 @@ var User = require('./app/controllers/user')
 var Control = require('./app/controllers/control')
 var multiparty = require('connect-multiparty')
 var port = process.env.PORT || 8080
-var app = express()
+var app = express();
+var os = require('os'); os.tmpDir = os.tmpdir;
 //for local debug
 //var dbUrl = 'mongodb://localhost:27017/PTC'
-
-//for docker container link
-//var dbUrl = 'mongodb://'+process.env.DB_PORT_27017_TCP_ADDR+':'+process.env.DB_PORT_27017_TCP_PORT
 
 //Read environment variable
 var dbUrl = 'mongodb://'+process.env.mongoAdd+':'+process.env.mongoPort+'/PTC'
@@ -36,8 +34,11 @@ mongoose.connect(dbUrl, function(err){
 
 //parse request body and session
 app.use(bodyParser({extended: true}))
+
 app.use(expressSession({
 	secret: 'ptc',
+	resave: true,
+	saveUninitialized: true,
 	store: new mongoStore({
 		url: dbUrl,
 		collection: 'session'

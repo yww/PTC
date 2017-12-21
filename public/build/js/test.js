@@ -127,9 +127,6 @@ function getConfigDetail(id){
 		url: '/config/'+id
 	}).done(function(config){
 
-		$('#eTime').text(config.duration);
-		$('#eUser').text(config.users)
-
 		if(config.rampup){
 			config.rampup /=60;
 		}
@@ -137,6 +134,9 @@ function getConfigDetail(id){
 		if(config.duration){
 			config.duration /=60;
 		}
+
+		$('#eTime').text(config.duration);
+		$('#eUser').text(config.users)		
 		$("input[name='host']").val(config.host)
 		$("input[name='port']").val(config.port)
 		// $("input[name='users']").val(config.users)

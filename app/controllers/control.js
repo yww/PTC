@@ -86,7 +86,6 @@ function startTask(doc){
 	.findById(doc.testId,function(err,test){
 		name=test._doc.caseName
 	})
-ff
 	Config
 	.findById(doc.configId,function(err,config){
 		configItems.forEach(function(c){
