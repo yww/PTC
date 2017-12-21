@@ -37,7 +37,7 @@ Start PTC(JMeter master) by passing in mongo and slave information.
 ```
 docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP Address of mongo db> -e mongoPort=<Port of mongo db> -e slaves=<Slave IP seperated by comma> --name ptc ptc
 ```
-[](workbench/command.png)
+![alt text](/workbench/command.png)
 
 4. If you saw "db conncetion established", you are ready to go. Visite http://localhost:8080 to use PTC
 
@@ -51,11 +51,11 @@ docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP
 - Fill in host and port in needed
 - Specify some critical parameters (like iteration, thread user etc.) by dragging the slider
 - Click save button, test will be executed automaticlly.
-[](/workbench/test.png)
+![alt text](/workbench/test.png)
 4. After test status becomes to 'Finished', click log to check the [report](workbench/dashboard/index.html).
 
 ### Note
-You can define parameters like thread user, rampup time... directly in JMeter test case, that way the parameters you specified on web page won't take effect. Otherwise, use `${__p()}` to take the parameter. Here is an [example](/)
+You can define parameters like thread user, rampup time... directly in JMeter test case, that way the parameters you specified on web page won't take effect. Otherwise, use `${__p()}` to take the parameter. Here is an [sample case](/workbench/PTC.jmx)
 
 ## Manage your case
 1. **Object** tests are orgnized under project. Open an object 
@@ -75,33 +75,6 @@ You can define parameters like thread user, rampup time... directly in JMeter te
 1. Firt registered user is super user, and otheres will be normal user
 - Super user can visit all the data. 
 - Normal user can only visit the data created by himself/herself 
-
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
