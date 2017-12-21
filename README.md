@@ -52,7 +52,7 @@ docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP
 - Specify some critical parameters (like iteration, thread user etc.) by dragging the slider
 - Click save button, test will be executed automaticlly.
 ![alt text](/workbench/test.png)
-4. After test status becomes to 'Finished', click log to check the [report](workbench/dashboard/index.html).
+4. After test status becomes to 'Finished', click log to check the [report](/workbench/dashboard).![alt text](/workbench/report.png)
 
 ### Note
 You can define parameters like thread user, rampup time... directly in JMeter test case, that way the parameters you specified on web page won't take effect. Otherwise, use `${__p()}` to take the parameter. Here is an [sample case](/workbench/PTC.jmx)
