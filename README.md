@@ -71,11 +71,11 @@ Tests are organized under project. Open an object
 A test contain a JMeter case and related configuration. Open a test:
 - Test execution history will be listed
 - Test can be updated by changing the case and/or the configuration
-- Test can be re-executed directly by click tht 'start' button
+- Test can be re-executed directly by click the 'Play' button
 - Test can be deleted, and all its execution history will be deleted together
 3. **Activity**
-To log some major event like test creation and update
-- You can check activity on homepage- dashboard
+To log some major events like test creation and update
+- You can check activity on homepage-> dashboard
 - If a test gets deleted, all its related activities will be deleted too
 
 ## Permission Control
@@ -85,7 +85,8 @@ First registered user is super user, and others will be normal user
 
 ## Authors
 
-**Wenwen Yang** wenwen.yang88@gmail.com
+**Wenwen Yang**
+wenwen.yang88@gmail.com
 
 
 ## License
