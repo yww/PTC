@@ -46,11 +46,15 @@ docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP
 1. Register and login the system
 2. Create a project if there isn't any
 3. Go to Performance Testing->JMeter test page to add a test
-- Choose a project
-- Fill in test name
-- Fill in host and port in needed
-- Specify some critical parameters (like iteration, thread user etc.) by dragging the slider
-- Click save button, test will be executed automatically.
+- Specify _mandatory_ information of a test:
+  - Choose a project
+  - Fill in test name 
+  - Upload a JMeter test case
+- Specify _optional_ information:
+  - Fill in host and port
+  - Other parameters by dragging the sliders
+  
+- Click save button, test will be executed automatically. Check execution status in 'Execution History' section
 ![alt text](/workbench/test.png)
 4. After test status becomes to 'Finished', click log to check the [report](/workbench/dashboard).![alt text](/workbench/report.png)
 
@@ -58,23 +62,26 @@ docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP
 You can define parameters like thread user, rampup time... directly in JMeter test case, that way the parameters you specified on web page won't take effect. Otherwise, use `${__p()}` to take the parameter. Here is an [sample case](/workbench/PTC.jmx)
 
 ## Manage your case
-1. **Object** tests are organized under project. Open an object 
+1. **Object**
+Tests are organized under project. Open an object 
 - All tests that under this project will be listed
 - Object name and description can be updated
 - Object can be deleted only if there is no test under it
-2. **Test** A test contain a JMeter case and related configuration. Open a test:
+2. **Test**
+A test contain a JMeter case and related configuration. Open a test:
 - Test execution history will be listed
 - Test can be updated by changing the case and/or the configuration
 - Test can be re-executed directly by click tht 'start' button
 - Test can be deleted, and all its execution history will be deleted together
-3. **Activity** to log some major event like test creation and update
+3. **Activity**
+To log some major event like test creation and update
 - You can check activity on homepage- dashboard
 - If a test gets deleted, all its related activities will be deleted too
 
 ## Permission Control
-1. First registered user is super user, and others will be normal user
-- Super user can visit all data. 
-- Normal user can only visit the data (Project, test, test execution log etc.)created by himself/herself 
+First registered user is super user, and others will be normal user
+- Super user can visit all data(Project, test, test execution log etc.
+- Normal user can only visit the data created by himself/herself 
 
 ## Authors
 
