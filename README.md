@@ -4,11 +4,11 @@ Performance test center. Docker based service to help user manage, organize, exe
 
 ### Prerequisites
 
-Docker is properly installed and configed
+Docker is properly installed and configured
 
 ## Getting Started
 
-Download docker image from docker hub:
+Download Docker image from Docker hub:
   - [mongo](https://hub.docker.com/_/mongo/): Mongo db
   - [ptc](https://hub.docker.com/r/wankutuzi/ptc/): JMeter master along with PTC main service
   - [jmeterslave](https://hub.docker.com/r/wankutuzi/jmeterslave/):JMeter slave to execute test and send report back to master
@@ -35,11 +35,11 @@ docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(dock
 ```
 Start PTC(JMeter master) by passing in mongo and slave information. 
 ```
-docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP Address of mongo db> -e mongoPort=<Port of mongo db> -e slaves=<Slave IP seperated by comma> --name ptc ptc
+docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP Address of mongo db> -e mongoPort=<Port of mongo db> -e slaves=<Slave IP separated by comma> --name ptc ptc
 ```
 ![alt text](/workbench/command.png)
 
-4. If you saw "db conncetion established", you are ready to go. Visite http://localhost:8080 to use PTC
+4. If you saw "db conncetion established", you are ready to go. Visit http://localhost:8080 to use PTC
 
 ## Running the tests
 
@@ -50,7 +50,7 @@ docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP
 - Fill in test name
 - Fill in host and port in needed
 - Specify some critical parameters (like iteration, thread user etc.) by dragging the slider
-- Click save button, test will be executed automaticlly.
+- Click save button, test will be executed automatically.
 ![alt text](/workbench/test.png)
 4. After test status becomes to 'Finished', click log to check the [report](/workbench/dashboard).![alt text](/workbench/report.png)
 
@@ -58,23 +58,23 @@ docker run -it -p <server port>:<container port 8080 by default> -e mongoAdd=<IP
 You can define parameters like thread user, rampup time... directly in JMeter test case, that way the parameters you specified on web page won't take effect. Otherwise, use `${__p()}` to take the parameter. Here is an [sample case](/workbench/PTC.jmx)
 
 ## Manage your case
-1. **Object** tests are orgnized under project. Open an object 
+1. **Object** tests are organized under project. Open an object 
 - All tests that under this project will be listed
 - Object name and description can be updated
 - Object can be deleted only if there is no test under it
-2. **Test** A test contain a JMeter case and related configuration. Open a tset:
+2. **Test** A test contain a JMeter case and related configuration. Open a test:
 - Test execution history will be listed
 - Test can be updated by changing the case and/or the configuration
 - Test can be re-executed directly by click tht 'start' button
 - Test can be deleted, and all its execution history will be deleted together
-3. **Activity** to log some major event like test creation and updat
+3. **Activity** to log some major event like test creation and update
 - You can check activity on homepage- dashboard
 - If a test gets deleted, all its related activities will be deleted too
 
 ## Permission Control
-1. Firt registered user is super user, and otheres will be normal user
-- Super user can visit all the data. 
-- Normal user can only visit the data created by himself/herself 
+1. First registered user is super user, and others will be normal user
+- Super user can visit all data. 
+- Normal user can only visit the data (Project, test, test execution log etc.)created by himself/herself 
 
 ## Authors
 
