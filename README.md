@@ -15,7 +15,7 @@ Download Docker image from Docker hub:
   
 ### Note 
 - [jmeterslave](https://hub.docker.com/r/wankutuzi/jmeterslave/) and [jmetermaster](https://hub.docker.com/r/wankutuzi/jmetermaster/) are built base on [jmeter3.0base](https://hub.docker.com/r/wankutuzi/jmeter3.0base/)
-- [PTC](https://hub.docker.com/r/wankutuzi/ptc/) is built base on jmetermaster
+- [ptc](https://hub.docker.com/r/wankutuzi/ptc/) is built base on jmetermaster
 - Feel free to edit the [Dockerfile](workbench/docker%20file) and build your own docker image with selected version of Java/JMeter/NodeJS etc.
 
 ### Deployment
