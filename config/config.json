@@ -1,6 +1,6 @@
 {
 	"maxDurTime": 30,
-	"maxConTasks": 5,
+	"maxConTasks": 2,
 	"targetMachine":
 		{
 			"host": "10.58.9.185",

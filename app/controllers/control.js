@@ -99,9 +99,13 @@ function startTask(doc){
 	console.log('/opt/PTC/app/bashScripts/start.sh '+id+' '+name+' '+remoteHosts+' '+configString);
 	var cp = child_process.exec('/opt/PTC/app/bashScripts/start.sh '+id +' '+name+' '+remoteHosts+' '+configString);
 	cp.stdout.on('data', (data) => {
-	  console.log(`ondata: ${data}`);	
 		  var pId=parseInt(data); 
 		  if(!isNaN(pId)){
+		    console.log(`Remote test starts, PID is: ${data}`);
+
+		    //remove ondata listner to avoid performance issue
+		    cp.removeListener('data',()=>{})
+
 			doc.status=2
 			doc.pId = pId
 			doc.meta.startAt = Date.now()
